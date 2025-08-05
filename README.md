@@ -154,7 +154,7 @@ _불균형 시각화 추가_
 | Autoencoder  |   0.55   |     0.55       | 0.5728  |      0.51       |
 
 - **MLP**: 단순한 2 hidden layer 구조임에도 불구하고 가장 높은 AUC(0.6217) 및 F1 score(0.59)를 나타냈다.
-- **DeelMLP**: Dropout 및 BatchNorm을 활용하여 regularization 효과를 넣었으나, 성능은 MLP보다 낮았다. 복잡한 구조가 오히려 일반화에 방해가 되었을 가능성이 있다. 하지만 하이퍼파라미터 튜닝을 통해 향상될 가능성이 있다고 판단하였다.
+- **DeepMLP**: Dropout 및 BatchNorm을 활용하여 regularization 효과를 넣었으나, 성능은 MLP보다 낮았다. 복잡한 구조가 오히려 일반화에 방해가 되었을 가능성이 있다. 하지만 하이퍼파라미터 튜닝을 통해 향상될 가능성이 있다고 판단하였다.
 - **CNN1D**: 
 - **LSTM & GRU**:
 - **Transformer**:
