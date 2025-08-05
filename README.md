@@ -9,7 +9,8 @@
 본 프로젝트의 목적은 사내 인사 데이터를 바탕으로 직원의 이탈 여부를 예측하는 모델을 개발하여 이탈 가능성이 높은 직원을 사전에 파악하고, 이를 바탕으로 조직의 인적 리스크 관리의 유용성을 높이는 것이다.
 
 ### 팀 소개
-|<img width="367" height="264" alt="image" src="https://github.com/user-attachments/assets/b0132a3d-51b0-4aec-aa44-a63973af1844" />|ㅎㅎㅎ|ㅎㅎ|ㅎㅎㅎ|
+|<img width="367" height="264" alt="image" src="https://github.com/user-attachments/assets/b0132a3d-51b0-4aec-aa44-a63973af1844" />|<img width="367" height="264" alt="image" src="https://lh6.googleusercontent.com/proxy/_inY1793ghjPGi4bFRVCiPh4lnk3r39enUHl8dYxuPeT3RsjlSQ8m0KrfDGdu-KMRPNUE4HFjhkwd2QbyVoFZAOSuVZHKnnZRRrDFCo2LVc7n2MZmP8![Uploading image.png…]()
+" />|ㅎㅎ|ㅎㅎㅎ|
 |:---:|:---:|:---:|:---:|
 |차하경|임종민|김나은|이용채|
 
