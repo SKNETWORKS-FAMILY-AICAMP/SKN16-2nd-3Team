@@ -163,7 +163,8 @@ _불균형 시각화 추가_
 
 결과적으로 MLP 모델이 가장 우수한 성능을 보였으며, 이는 복잡한 구조의 모델보다 간단한 구조가 오히려 효과적일 수도 있음을 보여준다. CNN이나 RNN 기반의 모델은 현재 데이터의 특성에 적합하지 않아 낮은 성능을 보였다. 따라서 성능과 학습 시간의 효율성을 고려해 ML, DeepMLP, AutoEncoder Classifier를 선정해 최적화 과정을 수행했다. 
 
-**최적화 과정**
+**최적화 및 최종 성능 평가**
 
-
-**최종 성능**
+|![MLP](image/MLP_ROC.png)|![DeepMLP](image/DeepMLP_ROC.png)|![AutoEncoder](image/AutoEncoder_ROC.png)|
+|:---:|:---:|:---:|
+|Early Stopping + Dropout 적용 MLP 모델|Early Stopping + Dropout 적용 DeepMLP 모델|Early Stopping + Dropout  AutoEncoder 모델|
