@@ -165,6 +165,16 @@ _불균형 시각화 추가_
 
 **최적화 및 최종 성능 평가**
 
-|![MLP](image/MLP_ROC.png)|![DeepMLP](image/DeepMLP_ROC.png)|![AutoEncoder](image/AutoEncoder_ROC.png)|
-|:---:|:---:|:---:|
-|Early Stopping + Dropout 적용 MLP 모델|Early Stopping + Dropout 적용 DeepMLP 모델|Early Stopping + Dropout  AutoEncoder 모델|
+|ROC-Curve|모델 설명|Best Parameters|
+|:---|:---|:---|
+|![MLP](image/MLP_ROC.png)|Early Stopping + Dropout 적용 MLP 모델| ```hidden1: 200``` ```hidden2: 74``` ```lr: 0.008040853765733618``` ```batch_size: 128```|
+|![DeepMLP](image/DeepMLP_ROC.png)|Early Stopping + Dropout 적용 DeepMLP 모델|```hidden1: 174``` ```hidden2: 89``` ```dropout: 0.4907642593510716``` ```lr: 0.0020379497782479967``` ```batch_size: 
+128```|
+|![AutoEncoder](image/AutoEncoder_ROC.png)|Early Stopping + Dropout  AutoEncoder 모델|```encoding_dim: 96``` ```dropout_rate: 0.27937315793717066``` ```lr: 0.00939236014289022``` ```batch_size: 128```|
+|![Ensemble](image/Ensemble_MLPDEEPMLP_ROC.png)|MLP + DeepMLP 앙상블 모델|```hidden_dim1: 66``` ```hidden_dim2: 53``` ```dropout: 0.4091386964275948``` ```lr: 0.008331419334917479``` ```batch_size: 128```|
+
+<br>
+
+|![Ensemble](image/Ensemble_MLPDEEPMLP_ROC.png)|
+|:---:|
+|MLP + DeepMLP 앙상블 모델|
