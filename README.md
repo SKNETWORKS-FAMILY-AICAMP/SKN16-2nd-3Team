@@ -91,6 +91,12 @@
 
 <br>
 
+- 변수 중요도 분석
+
+|![Feature Importance](imgae/Feature_Importance.png)|
+
+<br> 
+
 - 가중치 조절에 따른 수치형 변수의 분포 차이
   
 |![가중치 조절 전 만족도](image/가중치%20조절%20전.png)|![가중치 조절 후 만족도](image/가중치%20조절%20후.png)|
@@ -159,7 +165,7 @@ Target인 Resigned 변수는 퇴직자(1)와 재직자(0)의 비율이 약 9:1�
 
 <br>
 
-|ROC-Curve|모델 설명|Best Parameters|
+|ROC-Curve|모델|Best Parameters|
 |:---|:---|:---|
 |![MLP](image/MLP_ROC.png)|MLP| ```hidden1: 200``` ```hidden2: 74``` ```lr: 0.008040853765733618``` ```batch_size: 128```|
 |![DeepMLP](image/DeepMLP_ROC.png)|DeepMLP|```hidden1: 174``` ```hidden2: 89``` ```dropout: 0.4907642593510716``` ```lr: 0.0020379497782479967``` ```batch_size: 128```|
