@@ -95,9 +95,9 @@ _불균형 시각화 추가_
 <br>
 
 ## EDA
-|![수치형 변수 상관관계 히트맵](image/Numeric%20features%20corr%20matrix.png)|
-|:---:|
-|수치형 변수 간 상관관계 시각화, 상관관계가 거의 없음.|
+|![수치형 변수 상관관계 히트맵](image/수치형%20변수%20상관관계%20히트맵.png)|![가중치 조절 후 상관관계]|
+|:---:|:---:|
+|수치형 변수 간 상관관계 시각화, 상관관계가 거의 없음.|가중치 부여 후 상관관계 히트맵|
 
 <br>
 
@@ -154,30 +154,30 @@ _불균형 시각화 추가_
 
 **성능 비교 및 모델 선정**
 
-| 모델         | Accuracy | Macro F1-score |   AUC   | Best Threshold |
-|:------------:|:--------:|:--------------:|:-------:|:---------------:|
-| MLP          |   0.59   |     0.59       | 0.6217  |      0.53       |
-| DeepMLP      |   0.55   |     0.55       | 0.5767  |      0.52       |
-| CNN 1D       |   0.50   |     0.49       | 0.5029  |      0.50       |
-| LSTM         |   0.52   |     0.52       | 0.5304  |      0.50       |
-| GRU          |   0.51   |     0.51       | 0.5261  |      0.50       |
-| Transformer  |   0.56   |     0.56       | 0.5846  |      0.51       |
-| Autoencoder  |   0.55   |     0.55       | 0.5728  |      0.51       |
+| 모델(Early Stopping + Dropout 적용)          | Accuracy | Macro F1-score |   AUC   | Best Threshold |
+|:---------------------------------------------|:---------|:---------------|:--------|:---------------|
+| MLP                    |   0.66   |     0.64       | 0.73    |      0.54      |
+| DeepMLP                                      |   0.66   |     0.65       | 0.74    |      0.48      |
+| Transformer    |   0.65   |     0.65       | 0.74    |      0.50      |
+| Autoencoder Classifier                       |   0.67   |     0.66       | 0.75    |      0.46      |
+| MLP + DeepMLP|   0.66   |     0.65       |0.75     |       -        |
+|Transformer + MLP                             |   0.65   |     0.64       |  0.72   |      0.49      |
 
-- **MLP**: 단순한 2 hidden layer 구조임에도 불구하고 가장 높은 AUC(0.6217) 및 F1 score(0.59)를 나타냈다.
+
+- **MLP**: 기본적인 딥러닝 구조의 모델이지만 비선형적 관계를 비교적 효과적으로 학습함. 하지만 재직자(0)에 대한 Recall 값이 낮아 균형적 예측에 대한 성능은 다소 떨어진다고 볼 수 있음.
 - **DeepMLP**: Dropout 및 BatchNorm을 활용하여 regularization 효과를 넣었으나, 성능은 MLP보다 낮았다. 복잡한 구조가 오히려 일반화에 방해가 되었을 가능성이 있다. 하지만 하이퍼파라미터 튜닝을 통해 향상될 가능성이 있다고 판단하였다.
-- **CNN1D**: 
-- **LSTM & GRU**:
-- **Transformer**:
-- **AutoEncoder Classifier**:입력 데이터를 잠재 공간으로 압축한 후, 해당 벡터를 기반으로 분류를 진행하는 모델. 성능은 DeepMLP와 유사했으며, AUC는 0.5728로 중간 수준. 
+- **Transformer**: 소수 클래스의 데이터(퇴직자)를 탐지하기 적합한 구조의 모델로, Recall 0.83의 높은 값을 나타냄. 하지만 재직자 예측에 대해서는 퇴직자 예측보다는 낮은 성능으로 False Positive에 대한 우려가 존재함.
+- **AutoEncoder Classifier**:입력 데이터를 잠재 공간으로 압축한 후, 해당 벡터를 기반으로 분류를 진행하는 모델. 성능은 DeepMLP와 유사했으며, AUC는 0.5728로 중간 수준.
+- **MLP + DeepMLP**: Dropout과 Early Stopping을 적용하여 과적합을 방지하였음. 퇴직자 Recall이 전체 모델 중 가장 높게 나타남. 재직자 예측에 대해서는 퇴직자에 비해서 약하지만, False Negative를 방지하고 퇴직자를 탐지하는 것이 더 중요하기 때문에 유용한 모델이라고 볼 수 있음.
 
-결과적으로 MLP 모델이 가장 우수한 성능을 보였으며, 이는 복잡한 구조의 모델보다 간단한 구조가 오히려 효과적일 수도 있음을 보여준다. CNN이나 RNN 기반의 모델은 현재 데이터의 특성에 적합하지 않아 낮은 성능을 보였다. 따라서 성능과 학습 시간의 효율성을 고려해 ML, DeepMLP, AutoEncoder Classifier를 선정해 최적화 과정을 수행했다. 
 
-**최적화 및 최종 성능 평가**
+결과적으로 MLP + DeepMLP의 앙상블 모델이 가장 우수한 성능을 보였으며, 
+
 
 |ROC-Curve|모델 설명|Best Parameters|
 |:---|:---|:---|
-|![MLP](image/MLP_ROC.png)|Early Stopping + Dropout 적용 MLP 모델| ```hidden1: 200``` ```hidden2: 74``` ```lr: 0.008040853765733618``` ```batch_size: 128```|
-|![DeepMLP](image/DeepMLP_ROC.png)|Early Stopping + Dropout 적용 DeepMLP 모델|```hidden1: 174``` ```hidden2: 89``` ```dropout: 0.4907642593510716``` ```lr: 0.0020379497782479967``` ```batch_size: 128```|
-|![AutoEncoder](image/AutoEncoder_ROC.png)|Early Stopping + Dropout  AutoEncoder 모델|```encoding_dim: 96``` ```dropout_rate: 0.27937315793717066``` ```lr: 0.00939236014289022``` ```batch_size: 128```|
+|![MLP](image/MLP_ROC.png)|MLP| ```hidden1: 200``` ```hidden2: 74``` ```lr: 0.008040853765733618``` ```batch_size: 128```|
+|![DeepMLP](image/DeepMLP_ROC.png)|DeepMLP|```hidden1: 174``` ```hidden2: 89``` ```dropout: 0.4907642593510716``` ```lr: 0.0020379497782479967``` ```batch_size: 128```|
+|![AutoEncoder](image/AutoEncoder_ROC.png)|AutoEncoder|```encoding_dim: 96``` ```dropout_rate: 0.27937315793717066``` ```lr: 0.00939236014289022``` ```batch_size: 128```|
+|
 |![Ensemble](image/Ensemble_MLPDEEPMLP_ROC.png)|MLP + DeepMLP 앙상블 모델|```hidden_dim1: 66``` ```hidden_dim2: 53``` ```dropout: 0.4091386964275948``` ```lr: 0.008331419334917479``` ```batch_size: 128```|
