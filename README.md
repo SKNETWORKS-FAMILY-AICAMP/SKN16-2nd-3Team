@@ -1,5 +1,14 @@
 # SKN16-2nd-3Team
 ## 😑 퇴사자 잡으러가조
+### 팀 소개
+
+| <img src="https://github.com/user-attachments/assets/888bb399-57f3-4a4e-88ed-e45b6e8abaa1" width="165" height="165"> |<img src="https://github.com/user-attachments/assets/f3d542dc-f702-450f-bbf3-2cb025889d2d" width="200" height="200"> | <img src="https://github.com/user-attachments/assets/4c90615c-8f3a-4b92-b385-8a5bb8ae428a" width="400" height="400"> | <img src="https://github.com/user-attachments/assets/fa3ed285-452e-42a1-b1c9-d1d427e9da33" width="170" height="170"> | <img src="https://github.com/user-attachments/assets/2d15551d-4cd2-40b9-9978-51f544f13ba9" width="300" height="300"> |
+|---|---|---|---|---|
+|이용채|김나은|임종민|차하경|김민석|
+|프로젝트 기획, 목표 설정, 결과 정리, 최종 보고서 작성, 발표|모델 실험, 머신러닝 성능 개선, 하이퍼파라미터 튜닝|피처 선정, 데이터 분석, 머신러닝 모델 시험|데이터 전처리 전략, 딥러닝 최적화, 하이퍼파라미터 튜닝|데이터 수집, 데이터 전처리, 초기 모델 테스트|
+
+<br>
+
 
 ## 프로젝트 개요
 ### 주제 선정 배경
@@ -16,12 +25,6 @@
 본 프로젝트의 목적은 사내 인사 데이터를 바탕으로 직원의 이탈 여부를 예측하는 모델을 개발하여 이탈 가능성이 높은 직원을 사전에 파악하고, 이를 바탕으로 조직의 인적 리스크 관리의 유용성을 높이는 것이다. 
 <br>
 
-### 팀 소개
-
-| <img src="https://github.com/user-attachments/assets/888bb399-57f3-4a4e-88ed-e45b6e8abaa1" width="165" height="165"> |<img src="https://github.com/user-attachments/assets/f3d542dc-f702-450f-bbf3-2cb025889d2d" width="200" height="200"> | <img src="https://github.com/user-attachments/assets/4c90615c-8f3a-4b92-b385-8a5bb8ae428a" width="400" height="400"> | <img src="https://github.com/user-attachments/assets/fa3ed285-452e-42a1-b1c9-d1d427e9da33" width="170" height="170"> | <img src="https://github.com/user-attachments/assets/2d15551d-4cd2-40b9-9978-51f544f13ba9" width="300" height="300"> |
-|---|---|---|---|---|
-|이용채|김나은|임종민|차하경|김민석|
-|프로젝트 기획, 목표 설정, 결과 정리, 최종 보고서 작성, 발표|모델 실험, 머신러닝 성능 개선, 하이퍼파라미터 튜닝|피처 선정, 데이터 분석, 머신러닝 모델 시험|데이터 전처리 전략, 딥러닝 최적화, 하이퍼파라미터 튜닝|데이터 수집, 데이터 전처리, 초기 모델 테스트|
 
 <br>
 
