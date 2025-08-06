@@ -213,11 +213,15 @@ MLP모델은 비교적 간단한 신경망 구조임에도 불구하고, 변수 
 
 epochs 는 3천개를 써서 학습을 시켰고 EarlyStopping 은 10으로 설정해두었다. 30분간 훈련 시킨 결과 EarlyStopping 은 되지 않았고 F1 Score: 0.8179 이 나왔다.
 
+📋 Classification Report:
+               precision    recall  f1-score   support
 
+      재직자(0)       0.83      0.79      0.81     17998
+      퇴사자(1)       0.80      0.84      0.82     17998
 
-
-
-
+    accuracy                           0.81     35996
+   macro avg       0.81      0.81      0.81     35996
+weighted avg       0.81      0.81      0.81     35996
 
 
 
